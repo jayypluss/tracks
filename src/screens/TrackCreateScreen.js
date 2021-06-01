@@ -23,7 +23,7 @@ const TrackCreateScreen = ({ isFocused }) => {
   );
 };
 
-const styles = StyleSheet.create({});
+// const styles = StyleSheet.create({});
 
 TrackCreateScreen.navigationOptions = () => {
   return {
