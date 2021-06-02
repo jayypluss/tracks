@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { Button } from 'react-native-elements';
 import { SafeAreaView } from 'react-navigation';
-import Spacer from '../components/Spacer'
+import Spacer from '../components/Spacer';
 import { Context as AuthContext } from '../context/AuthContext';
 
 const AccountScreen = () => {
@@ -16,15 +16,8 @@ const AccountScreen = () => {
       </Spacer>
     </SafeAreaView>
   );
-
 };
 
 const styles = StyleSheet.create({});
-
-AccountScreen.navigationOptions = () => {
-  return {
-    header: () => false,
-  };
-};
 
 export default AccountScreen;

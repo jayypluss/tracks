@@ -41,7 +41,7 @@ export default () => {
             setNavigator(navigator);
           }}
         />
-      </AuthProvider> 
+      </AuthProvider>
     </LocationProvider>
   );
 };

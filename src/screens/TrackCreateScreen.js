@@ -9,14 +9,14 @@ import useLocation from '../hooks/useLocation';
 import TrackForm from '../components/TrackForm';
 
 const TrackCreateScreen = ({ isFocused }) => {
-  const { state: { recording }, addLocation } = useContext(LocationContext);
-
-  const callback = useCallback(location => {
-    addLocation(location, recording);
-  }, [recording]);
-
-
-  const [err] = useLocation(isFocused || recording, callback);
+  const { state, addLocation } = useContext(LocationContext);
+  const callback = useCallback(
+    location => {
+      addLocation(location, state.recording);
+    },
+    [state.recording]
+  );
+  const [err] = useLocation(isFocused, callback);
 
   return (
     <SafeAreaView forceInset={{ top: 'always' }}>
@@ -28,12 +28,6 @@ const TrackCreateScreen = ({ isFocused }) => {
   );
 };
 
-// const styles = StyleSheet.create({});
-
-TrackCreateScreen.navigationOptions = () => {
-  return {
-    header: () => false,
-  };
-};
+const styles = StyleSheet.create({});
 
 export default withNavigationFocus(TrackCreateScreen);
